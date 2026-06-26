@@ -9,7 +9,7 @@ Plantilla para la creación de diapositivas utilizando **LaTeX** y **Beamer**, i
 
 ## 📌 Descripción
 
-Este repositorio contiene una plantilla para elaborar diapositivas académicas, docentes e institucionales con una estructura visual sobria, organizada y coherente con criterios de identidad institucional.
+Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana.
 
 La plantilla puede ser utilizada en:
 

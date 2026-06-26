@@ -1,4 +1,4 @@
-# 🎓 Plantilla de presentaciones USCO
+# 🎓 Plantilla para presentaciones USCO
 
 ![LaTeX](https://img.shields.io/badge/LaTeX-Beamer-blue)
 ![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
@@ -9,15 +9,7 @@ Plantilla para la creación de diapositivas inspirada en el formato oficial de l
 
 ## 📌 Descripción
 
-Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana.
-
-La plantilla puede ser utilizada libremente PERO :
-
-* 📚 Clases y cursos
-* 🧪 Seminarios de investigación
-* 🎤 Sustentaciones académicas
-* 📊 Socialización de proyectos
-* 👥 Reuniones académicas
+Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana, por lo tanto, puede ser utilizada libremente en actividades académicas (📚), investigativas (🧪), reuniones (👥) y procesos de socialización de tipo interno (📊) para otro tipo actividades se suguiere utilizar el formato oficial.
 
 ## ⚙️ Requisitos
 
@@ -67,43 +59,11 @@ Puede adaptar la plantilla según el tipo de actividad académica, curso, evento
 
 ---
 
-## ✅ Recomendaciones de uso
-
-Al utilizar esta plantilla se recomienda:
-
-* Mantener una redacción clara y precisa.
-* Evitar diapositivas saturadas de texto.
-* Usar imágenes y gráficos con buena resolución.
-* Conservar la coherencia visual entre diapositivas.
-* Respetar los lineamientos institucionales de comunicación e imagen.
-* Verificar el uso adecuado de logotipos, símbolos y colores institucionales.
-
----
-
-## ⚠️ Nota institucional
+## ⚠️ Advertencia
 
 Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes.
 
 Su uso debe realizarse de manera responsable, respetando la Política de Comunicaciones de la institución y las orientaciones oficiales sobre imagen institucional.
-
----
-
-## 📖 Referencia
-
-Universidad Surcolombiana.
-**Política de Comunicaciones, Acuerdo 030 de 2013**, aprobado por el Consejo Superior Universitario el 19 de julio de 2013.
-
----
-
-## 📄 Licencia
-
-Definir la licencia de uso del repositorio según corresponda.
-
-Por ejemplo:
-
-```text
-MIT License
-```
 
 o
 

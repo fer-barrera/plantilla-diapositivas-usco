@@ -9,7 +9,7 @@ Plantilla para la creación de diapositivas inspirada en el formato oficial de l
 
 ## 📌 Descripción
 
-Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana, por lo tanto, puede ser utilizada libremente en actividades internas para otro tipo actividades se suguiere utilizar el formato oficial.
+Este repositorio contiene una plantilla para LaTeX que reproduce, con alto grado de fidelidad, el formato oficial de presentaciones de la Universidad Surcolombiana, incorporando los principales criterios de identidad institucional.
 
 ## ⚙️ Requisitos
 
@@ -17,8 +17,8 @@ Para compilar la plantilla se recomienda contar con una distribución de LaTeX i
 
 Opciones sugeridas:
 
-* 🟦 TeXmaker
 * 🟧 TeX live
+* 🟦 TeXmaker (editor)
 
 ## 🚀 Uso básico
 
@@ -53,9 +53,7 @@ Edite el archivo principal `main.tex` y modifique los campos básicos de la pres
 
 Puede adaptar la plantilla según el tipo de actividad académica, curso, evento, proyecto o dependencia institucional.
 
----
-
-## ⚠️ Advertencia
+## ⚠️ Recomendaciones
 
 Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes.
 

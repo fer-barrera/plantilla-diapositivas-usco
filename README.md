@@ -40,10 +40,6 @@ Compile el archivo principal:
 pdflatex main.tex
 ```
 
-También puede abrir el proyecto en Overleaf o en su editor LaTeX de preferencia.
-
----
-
 ## ✏️ Personalización
 
 Edite el archivo principal `main.tex` y modifique los campos básicos de la presentación:
@@ -64,9 +60,3 @@ Puede adaptar la plantilla según el tipo de actividad académica, curso, evento
 Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes.
 
 Su uso debe realizarse de manera responsable, respetando la Política de Comunicaciones de la institución y las orientaciones oficiales sobre imagen institucional.
-
-o
-
-```text
-Uso académico e institucional.
-```

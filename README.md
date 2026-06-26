@@ -9,7 +9,7 @@ Plantilla para la creación de diapositivas inspirada en el formato oficial de l
 
 ## 📌 Descripción
 
-Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana, por lo tanto, puede ser utilizada libremente en actividades académicas (📚), investigativas (🧪), reuniones (👥) y procesos de socialización de tipo interno (📊) para otro tipo actividades se suguiere utilizar el formato oficial.
+Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana, por lo tanto, puede ser utilizada libremente en actividades internas para otro tipo actividades se suguiere utilizar el formato oficial.
 
 ## ⚙️ Requisitos
 

@@ -7,8 +7,6 @@
 
 Plantilla de presentaciones en **LaTeX** con **Beamer**, inspirada en el formato oficial de diapositivas de la **Universidad Surcolombiana**.
 
----
-
 ## 📌 Descripción
 
 Este repositorio contiene una plantilla para elaborar diapositivas académicas, docentes e institucionales con una estructura visual sobria, organizada y coherente con criterios de identidad institucional.
@@ -21,8 +19,6 @@ La plantilla puede ser utilizada en:
 * 🏛️ Eventos institucionales
 * 📊 Socialización de proyectos
 * 👥 Reuniones académicas
-
----
 
 ## 🏛️ Identidad e imagen institucional
 

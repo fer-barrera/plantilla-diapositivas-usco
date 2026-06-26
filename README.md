@@ -1,7 +1,3 @@
-# plantilla-diapositivas-usco
-Plantilla para diapositivas inspirada en el formato oficial de la Universidad Surcolombiana (USCO).
-
-
 # 🎓 Plantilla de presentaciones USCO
 
 ![LaTeX](https://img.shields.io/badge/LaTeX-Beamer-blue)

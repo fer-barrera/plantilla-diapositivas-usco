@@ -11,38 +11,13 @@ Plantilla para la creación de diapositivas inspirada en el formato oficial de l
 
 Este repositorio contiene una plantilla para elaborar diapositivas académicas en coherencia con los criterios de identidad institucional de la Universidad Surcolombiana.
 
-La plantilla puede ser utilizada en:
+La plantilla puede ser utilizada libremente PERO :
 
 * 📚 Clases y cursos
 * 🧪 Seminarios de investigación
 * 🎤 Sustentaciones académicas
-* 🏛️ Eventos institucionales
 * 📊 Socialización de proyectos
 * 👥 Reuniones académicas
-
-## 🏛️ Identidad e imagen institucional
-
-La comunicación institucional es un eje estratégico para fortalecer los vínculos de la Universidad con su entorno, visibilizar sus procesos académicos, investigativos, administrativos y de proyección social, y promover el reconocimiento institucional.
-
-De acuerdo con la Política de Comunicaciones de la Universidad Surcolombiana, la imagen institucional es un activo intangible que debe ser gestionado y protegido por los miembros de la institución, garantizando el uso adecuado de sus signos y símbolos.
-
-Esta plantilla se inspira en el formato oficial de presentaciones de la Universidad Surcolombiana y busca apoyar la elaboración de diapositivas con una apariencia clara, consistente y respetuosa de la identidad institucional.
-
----
-
-## 📁 Contenido del repositorio
-
-```text
-.
-├── main.tex              # Archivo principal de la presentación
-├── estilo/               # Archivos de configuración visual
-├── figuras/              # Imágenes, logotipos y recursos gráficos
-├── secciones/            # Archivos auxiliares por sección
-├── ejemplo.pdf           # Presentación de ejemplo
-└── README.md             # Descripción del repositorio
-```
-
----
 
 ## ⚙️ Requisitos
 
@@ -50,13 +25,8 @@ Para compilar la plantilla se recomienda contar con una distribución de LaTeX i
 
 Opciones sugeridas:
 
-* 🟦 TeX Live
-* 🟧 MiKTeX
-* ☁️ Overleaf
-* 🖥️ Visual Studio Code con extensión para LaTeX
-* 📝 TeXstudio
-
----
+* 🟦 TeXmaker
+* 🟧 TeX live
 
 ## 🚀 Uso básico
 

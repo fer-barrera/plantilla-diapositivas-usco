@@ -5,7 +5,7 @@
 ![Uso](https://img.shields.io/badge/uso-acad%C3%A9mico-green)
 ![Institución](https://img.shields.io/badge/Universidad-Surcolombiana-red)
 
-Plantilla para la creación de diapositivas utilizando **LaTeX** y **Beamer**, inspirada en el formato oficial de la **Universidad Surcolombiana** (USCO).
+Plantilla para la creación de diapositivas inspirada en el formato oficial de la **Universidad Surcolombiana** (USCO), utilizando **LaTeX** y **Beamer**.
 
 ## 📌 Descripción
 

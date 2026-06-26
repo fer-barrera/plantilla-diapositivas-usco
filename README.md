@@ -25,13 +25,13 @@ Opciones sugeridas:
 Clone el repositorio:
 
 ```bash
-git clone https://github.com/usuario/repositorio.git
+git clone https://github.com/fer-barrera/plantilla-diapositivas-usco.git
 ```
 
 Ingrese a la carpeta del proyecto:
 
 ```bash
-cd repositorio
+cd plantilla-diapositivas-usco
 ```
 
 Compile el archivo principal:

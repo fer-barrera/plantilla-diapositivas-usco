@@ -5,8 +5,6 @@
 ![Uso](https://img.shields.io/badge/uso-acad%C3%A9mico-green)
 ![Institución](https://img.shields.io/badge/Universidad-Surcolombiana-red)
 
-Plantilla para la creación de diapositivas inspirada en el formato oficial de la **Universidad Surcolombiana** (USCO), utilizando **LaTeX** y **Beamer**.
-
 ## 📌 Descripción
 
 Este repositorio contiene una plantilla para LaTeX que reproduce, con alto grado de fidelidad, el formato oficial de presentaciones de la Universidad Surcolombiana, incorporando los principales criterios de identidad institucional.
@@ -51,10 +49,6 @@ Edite el archivo principal `main.tex` y modifique los campos básicos de la pres
 \date{\today}
 ```
 
-Puede adaptar la plantilla según el tipo de actividad académica, curso, evento, proyecto o dependencia institucional.
-
 ## ⚠️ Recomendaciones
 
-Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes.
-
-Su uso debe realizarse de manera responsable, respetando la Política de Comunicaciones de la institución y las orientaciones oficiales sobre imagen institucional.
+Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes. Su uso debe realizarse de manera responsable, respetando la Política de Comunicaciones de la institución y las orientaciones oficiales sobre imagen institucional.

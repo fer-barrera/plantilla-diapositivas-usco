@@ -11,9 +11,7 @@ Este repositorio contiene una plantilla para LaTeX que reproduce, con alto grado
 
 ## ⚙️ Requisitos
 
-Para compilar la plantilla se recomienda contar con una distribución de LaTeX instalada.
-
-Opciones sugeridas:
+Para compilar la plantilla se recomienda:
 
 * 🟧 TeX live
 * 🟦 TeXmaker (editor)

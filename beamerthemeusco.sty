@@ -1,0 +1,69 @@
+%beamerthemeusco.sty
+
+% estilos
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themeusco@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=true}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+% based on
+% -----------------
+% https://github.com/karlosos/beamer-template-scratch
+% git
+% ------
+% https://github.com/josephwright/beamer/tree/main/base/themes
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage{ifthen}
+\RequirePackage{hyperref}
+\RequirePackage[many]{tcolorbox}
+
+
+% Font
+%\RequirePackage{lmodern}
+%\RequirePackage[sfdefault,lf]{carlito}
+%\RequirePackage[scaled=0.85]{DejaVuSansMono}
+%\RequirePackage[resetfonts]{cmap}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage{setspace}
+
+% Settings
+\useinnertheme{usco}
+\useoutertheme{usco}
+\usecolortheme{usco}
+\usefonttheme{usco}
+
+% labels
+\def\email#1{\gdef\@email{#1}}
+\def\summary#1{\gdef\@summary{#1}}
+\def\course#1{\gdef\@course{#1}}
+
+% shadow
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themeusco@shadow]
+
+% Bullets as circle
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\defbeamertemplate*{itemize item}{lightred}{$\bullet$}
+\defbeamertemplate*{itemize subitem}{lightred}{\---}
+\defbeamertemplate*{itemize subsubitem}{lightred}{\guillemotright}
+
+% regresa la portada al estilo por defecto
+%\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themeusco@shadow]
+
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themeusco@shadow]
+\setbeamertemplate{section page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themeusco@shadow]
+\setbeamertemplate{subsection page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themeusco@shadow]
+
+% Remove navigation bar
+\setbeamertemplate{navigation symbols}{}
+
+
+
+
+\mode<all>

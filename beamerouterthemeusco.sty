@@ -1,0 +1,140 @@
+%beamerouterthemeusco.sty
+\mode<presentation>
+
+% header
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette quaternary}
+
+% footer
+\setbeamercolor*{institution in head/foot}{parent=palette tertiary}
+\setbeamercolor*{course in head/foot}{parent=palette secondary}
+\setbeamercolor*{page number in head/foot}{parent=palette quaternary}
+
+% header
+\defbeamertemplate*{headline}{usco theme}
+{
+	\ifnum \theframenumber<1
+	 	\leavevmode%
+	 	\hbox{ \begin{beamercolorbox}[wd=\paperwidth,dp=5ex,ht=10ex,right]{}%
+        % empty environment to raise height\hfill
+        \includegraphics[width=0.2\paperwidth,keepaspectratio]{ingenieria.png}\hspace{10 pt}
+     	\end{beamercolorbox}}%
+	 	\vskip0pt%
+	\else
+  		\leavevmode%
+ 		\hbox{%
+  		\usebeamerfont{section in head/foot}%
+  		\begin{beamercolorbox}[wd=.55\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+  			\usebeamerfont{headline}\usebeamerfont{section in head/foot}\usebeamertemplate{section in head/foot}\hspace*{2ex}
+  		\end{beamercolorbox}%
+  		\begin{beamercolorbox}[wd=.45\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+    			\usebeamerfont{headline}\usebeamerfont{subsection in head/foot}\hspace*{2ex}\usebeamertemplate{subsection in head/foot}
+  		\end{beamercolorbox}}%
+  		\vskip0pt%
+	\fi%
+}
+
+%footer
+\defbeamertemplate*{footline}{usco theme}
+{
+  \ifnum \theframenumber<1
+        % This is the title frame, do nothing
+  \else
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{institution in head/foot}%
+      \usebeamerfont{institution in head/foot}\insertshortinstitute
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{course in head/foot}%
+      \usebeamerfont{course in head/foot}\@course
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{page number in head/foot}%
+       \usebeamercolor[fg]{page number in head/foot}\usebeamerfont{page number in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \end{beamercolorbox}}%
+    \vskip0pt%
+  \fi
+}
+
+% margins (bigger)
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+%% Changing margins
+\newenvironment{changemargin}[2]{%
+	\begin{list}{}{%
+			\setlength{\topsep}{0pt}%
+			\setlength{\leftmargin}{#1}%
+			\setlength{\rightmargin}{#2}%
+			\setlength{\listparindent}{\parindent}%
+			\setlength{\itemindent}{\parindent}%
+			\setlength{\parsep}{\parskip}%
+		}%
+		\item[]}{\end{list}}
+
+% Diapositiva la inicio de una sección
+\AtBeginSection[]{
+{
+\setbeamertemplate{background}{\color{uscoRed1}\rule{\paperwidth}{\paperheight}}
+  \begin{frame}[plain]
+  \vfill \vspace{0.8cm}
+  \centering
+  %\begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=true]{title}
+   {\fontsize{30}{40}\selectfont\textcolor{white}{\secname}\par}   
+  %\end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+}
+
+% Calculating Beamer presentation progress excluding appendix
+\makeatletter
+\gdef\appendixstartpageno{%
+\ifx\beamer@startpageofappendix\@empty%
+  \beamer@endpageofdocument%
+\else%
+  \beamer@startpageofappendix%
+\fi%
+}
+\gdef\presentationendpageno{%
+\ifx\beamer@startpageofappendix\@empty%
+  \beamer@endpageofdocument%
+\else%
+  \number\numexpr\appendixstartpageno-1\relax%
+\fi
+}
+\makeatother
+
+% Diapositiva la inicio de una sub-sección
+\AtBeginSubsection[]{
+{
+\setbeamertemplate{background}{\color{uscoRed2}\rule{\paperwidth}{\paperheight}}
+  \begin{frame}[plain,b]
+  \begin{columns}
+  \begin{column}{0.6\textwidth}
+  \end{column}
+  \begin{column}{0.4\textwidth}
+  \centering
+  \pgfmathtruncatemacro{\prog}{round(100*(\insertpagenumber/\presentationendpageno))}
+  {\fontsize{15}{10}\selectfont\textcolor{white}{$\blacktriangleright$ \insertsubsectionhead}}     \textcolor{white}{ (\prog \%)}\par
+  \vspace{3em}
+  \end{column}
+  \end{columns}
+  \end{frame}
+}
+}
+
+% Diapositiva de agradecimiento
+\def\makethanks{%
+{
+  \begin{frame}[plain,c]
+  \frametitle{}
+  \vspace{1cm}
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{section box}
+  	\begin{center}
+	{{\fontsize{30}{40}\selectfont Gracias por su atención}}
+	\end{center}
+	\end{beamercolorbox}
+  \end{frame}
+}
+}
+
+\mode<all>

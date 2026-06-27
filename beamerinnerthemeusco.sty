@@ -1,0 +1,230 @@
+%beamerinnerthemeusco.sty
+
+\RequirePackage{tikz, datetime}
+%\RequirePackage[showboxes,overlay,absolute]{textpos} % for debugging textblock
+\RequirePackage[overlay,absolute]{textpos}
+
+% fondo de la portada
+\mode<presentation>
+
+% coord (0,0) esquina inferior izquierda
+% coord (horizontal, vertical)
+\setbeamertemplate{background}{
+\begin{tikzpicture}
+	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	% Dimensiones del rectángulo grande:
+	\pgfmathsetmacro{\rectw}{\the\paperwidth};
+	\pgfmathsetmacro{\recth}{\the\paperheight/1.8};
+	% Dibuja el rectángulo grande
+	\fill[color=lightred] (0,0) rectangle(\rectw pt,\recth pt);
+	% Proporciones del rectángulo pequeño
+	\pgfmathsetmacro{\proportionh}{0.82};
+	\pgfmathsetmacro{\proportionw}{0.92};
+	\pgfmathsetmacro{\smallw}{\rectw * \proportionw};
+	\pgfmathsetmacro{\smallh}{\recth * \proportionh};
+	% Calcular las coordenadas para centrar el rectángulo pequeño:
+	\pgfmathsetmacro{\smallx}{0.5 * (\rectw - \smallw)};
+	\pgfmathsetmacro{\smally}{0.5 * (\recth - \smallh)};
+	% Dibujar el rectángulo pequeño y centrado:
+	\pgfmathsetmacro{\offseth}{\smallh * 0.3};
+	\fill[color=darkred,] (\smallx pt,\smally pt) rectangle ( \smallx + \smallw pt, \smally + \smallh - \offseth pt);
+	%\node[opacity=1,inner sep=0pt] at (2,8) {\includegraphics[width=0.25\paperwidth,keepaspectratio]{ingenieria.png}};
+    % ---------------------------------------	
+	% banner usco	
+	\pgfmathsetmacro{\bannerypos}{\the\paperwidth*0.21};
+	\begin{scope}[xshift=\bannerypos, yshift=\recth, scale=0.85]
+		%-------------------------------------------
+		% 2) Círculo fondo
+		%-------------------------------------------
+		\pgfmathsetmacro{\bigcircle}{2*(\bannerypos/1.9)};
+		\fill[white] (0,0) circle (\bigcircle pt);
+		%-------------------------------------------
+		% 3) Círculo rojo
+		%-------------------------------------------
+		\pgfmathsetmacro{\subcircleA}{\bigcircle*0.95)};
+		\draw[darkred, line width=0.25mm] (0,0) circle (\subcircleA pt);
+		%-------------------------------------------
+		% 4) Circulo rojo cortado 
+		%-------------------------------------------
+		\def\alpha{75}      % ángulo de corte
+		\pgfmathsetmacro{\subcircleB}{\subcircleA*0.92)};
+		% Anillo: 
+		% - Arco exterior desde α hasta 360-α
+		% - Arco interior en sentido inverso, de 360-α a α
+		\path[fill=darkred]
+		 (\alpha:\subcircleB pt) arc[start angle=\alpha, end angle=360-\alpha, radius=\subcircleB pt]
+		 -- cycle;
+		%-------------------------------------------
+		% 5) Círculo interior partido 
+		%-------------------------------------------
+		\pgfmathsetmacro{\subcircleC}{\subcircleB*0.85)};
+		%-------------------------------------------
+		% 5.1) Imagen
+		%-------------------------------------------
+		% Nodo en forma de círculo, que recorta la imagen:
+  		\begin{scope}[shift={(0cm,0cm)}]
+  			\pgfmathsetmacro{\imwidth}{\bigcircle*1.4)}; %<-- aspecto de la imagen
+    			% Definimos el recorte: un círculo centrado en (0,0) con radio 1.5cm
+   			 \clip (0,0) circle (\subcircleC pt);
+	  		% Insertamos la imagen; se recortará solo lo que esté en este scope
+    			\node at (0,0) {\includegraphics[width=\imwidth pt]{usco.png}};
+  		\end{scope}
+		\pgfmathsetmacro{\beta}{acos(\subcircleB*cos(\alpha)/\subcircleC)}      % ángulo de corte
+		% Mitad (ángulos de α a 360-α)
+		\path[fill=none]
+		  (\beta:\subcircleC pt) arc[start angle=\beta, end angle=360-\beta, radius=\subcircleC pt]
+		  -- cycle;
+		% Mitad (complementaria, de 360-α a α+360)
+		\path[fill=darkred, fill opacity=0.5]
+		  (360-\beta:\subcircleC pt) arc[start angle=360-\beta, end angle=\beta+360, radius=\subcircleC pt]
+		  -- cycle;
+		%-------------------------------------------
+		% 6) Círculo central partido
+		%-------------------------------------------
+		\pgfmathsetmacro{\subcircleD}{\subcircleC*0.45)};
+		\pgfmathsetmacro{\gamma}{acos(\subcircleC*cos(\beta)/\subcircleD)}      % ángulo de corte
+		%\def\gamma{47.68}      % ángulo de corte
+		% Mitad marrón
+		\path[fill=darkred, fill opacity=0.7]
+		  (\gamma:\subcircleD pt) arc[start angle=\gamma, end angle=360-\gamma, radius=\subcircleD pt]
+		  -- cycle;
+		% Mitad dorado
+		\path[fill=darkred, fill opacity=0.7]
+		  (360-\gamma:\subcircleD pt) arc[start angle=360-\gamma, end angle=\gamma+360, radius=\subcircleD pt]
+		  -- cycle;
+  	\end{scope}
+  	% other pages
+	\ifnum\thepage>1\relax%
+		\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	\fi
+\end{tikzpicture}
+}
+
+% Title page
+\setbeamertemplate{title page}{
+	% para ajustar las coordenadas de textblock (esquina superior izquierda)
+ 	\setlength{\TPHorizModule}{\the\paperwidth}
+ 	\setlength{\TPVertModule}{\the\paperheight}
+ 	% Contador a cero
+    \setcounter{framenumber}{0}
+    % Title
+    \pgfmathsetmacro{\titlehpos}{(\the\paperheight * 0.35}
+    \pgfmathsetmacro{\titlewpos}{(\the\paperwidth * 0.45}
+    \pgfmathsetmacro{\titlew}{(\the\paperwidth - \titlewpos - 1em}
+    	\begin{textblock*}{\titlew pt}[0,1](\titlewpos pt, \titlehpos pt)
+    \begin{beamercolorbox}[left]{title page header}%
+    \usebeamerfont{title}\usebeamercolor{title}\inserttitle%
+    \end{beamercolorbox}%
+    \end{textblock*}
+    % Subtitle
+    \pgfmathsetmacro{\subtitlehpos}{(\the\paperheight * 0.42}
+    \pgfmathsetmacro{\titlew}{(\the\paperwidth - \titlewpos - 1em}
+    	\begin{textblock*}{\titlew pt}[0,1](\titlewpos pt, \subtitlehpos pt)
+    \begin{beamercolorbox}[left]{title page header}%
+    \usebeamerfont{subtitle}\usebeamercolor{subtitle}\insertsubtitle%
+    \end{beamercolorbox}%
+    \end{textblock*}
+    % Author
+    \pgfmathsetmacro{\authorhpos}{(\the\paperheight * 0.47}
+	\begin{textblock*}{\titlew pt}[0,0](\titlewpos pt, \authorhpos pt)
+	\begin{beamercolorbox}[left]{author}%
+	\usebeamerfont{author}\usebeamercolor{author}\insertauthor
+    \end{beamercolorbox}%
+	\end{textblock*}
+	% Institute
+    \pgfmathsetmacro{\institutehpos}{(\the\paperheight * 0.54}
+	\begin{textblock*}{\titlew pt}[0,0](\titlewpos pt, \institutehpos pt)
+	\begin{beamercolorbox}[left]{institute}%
+	\usebeamerfont{institute}\usebeamercolor{institute}\insertinstitute\\
+	 {\hypersetup{urlcolor=white} \texttt{\href{mailto:\@email}{\@email}}}
+    \end{beamercolorbox}%
+	\end{textblock*}
+	% Summary
+	\pgfmathsetmacro{\summarywpos}{(\the\paperwidth * 0.4}
+    \pgfmathsetmacro{\summaryhpos}{(\the\paperheight * 0.75}
+	\begin{textblock*}{\titlew pt}[0,0](\summarywpos pt, \summaryhpos pt)
+	\begin{beamercolorbox}[left]{summary}%
+	\usebeamerfont{summary}\usebeamercolor{summary}\@summary
+    \end{beamercolorbox}%
+	\end{textblock*}
+	% date
+    \pgfmathsetmacro{\datehpos}{(\the\paperheight * 0.92}
+	\begin{textblock*}{\titlew pt}[0,1](\summarywpos pt, \datehpos pt)
+	\begin{beamercolorbox}[left]{date}%
+	\usebeamerfont{date}\usebeamercolor{date}\insertdate    		
+	\end{beamercolorbox}%
+	\end{textblock*}
+}
+
+
+% Blocks
+% --------
+% -- estilo
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+% -- justify text
+\addtobeamertemplate{block begin}{}{\justifying}
+% -- blocks props
+%\setbeamercolor{block body}{bg=uscoBlue1!10}
+%\setbeamercolor{block title}{bg=uscoBlue1!20, fg=uscoBlue1}
+\setbeamercolor{block body}{bg=orange!10}
+\setbeamercolor{block title}{bg=orange, fg=white}
+% -- alert block
+\setbeamercolor{block body alerted}{fg=black, bg=blue!10!white}
+\setbeamercolor{block title alerted}{fg=white,bg=blue!75!black}
+%  -- example block
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!20!bg}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!70!bg}
+% -- brownblock
+\newenvironment<>{brownblock}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=studentbrown}%
+  \setbeamercolor{block body}{fg=black, bg=studentbrown!20!white}
+  \begin{block}#2{#1}}{\end{block}}
+% -- lightredblock
+\newenvironment<>{lightredblock}[1]{%
+  \setbeamercolor{block title}{bg=alerted text.fg!50}%
+  \setbeamercolor{block body}{bg=alerted text.fg!10}
+  \begin{block}#2{#1}}{\end{block}}
+% -- darkredblock
+\newenvironment<>{darkredblock}[1]{%
+  \setbeamercolor{block title}{use=alerted text,fg=white,bg=alerted text.fg!95!black}
+  \setbeamercolor{block body}{bg=alerted text.fg!10}
+  \begin{block}#2{#1}}{\end{block}}
+% -- lightgreenblock
+\newenvironment<>{lightgreenblock}[1]{%
+  \setbeamercolor{block title}{bg=green!30, fg=green!10!black}%
+  \setbeamercolor{block body}{bg=green!10}
+  \begin{block}#2{#1}}{\end{block}}
+% -- rededgeblock
+\newenvironment{rededgeblock}[1]{%
+\tcolorbox[colback=white!100,colframe=red!75!black,left=2pt,subtitle style={boxrule=0pt, colback=yellow!50!red!25!white},title=#1]}%
+{\endtcolorbox}
+% -- rededgeblock
+\newenvironment{rededgeblock_sm}[1]{%
+\tcolorbox[enhanced,colback=white!100,drop lifted shadow, width=0.5\textwidth, colframe=red!75!black,left=2pt,subtitle style={boxrule=0pt, colback=yellow!50!red!25!white},title=#1]}%
+{\endtcolorbox}
+% -- simplebox
+\newtcolorbox[auto counter]{simplebox}[1]{%
+    colback=white,
+    colframe=red,
+    colbacktitle=white!90!structure.fg,
+    coltitle=black,
+    fonttitle=\bfseries, 
+    enhanced,
+}
+
+% math environment
+% --------
+\addtobeamertemplate{proof begin}{%
+    \setbeamercolor{block title}{fg=black,bg=red!50!white}
+    \setbeamercolor{block body}{fg=red, bg=red!20!white}
+}{}
+\BeforeBeginEnvironment{definition}{%
+    \setbeamercolor{block title}{fg=white, bg=teal}
+    \setbeamercolor{block body}{bg=teal!25}
+}
+\BeforeBeginEnvironment{theorem}{%
+	\setbeamercolor{block title}{bg=Lawngreen, fg=black}
+	\setbeamercolor{block body}{bg=Lawngreen!20}
+}
+
+\mode<all>

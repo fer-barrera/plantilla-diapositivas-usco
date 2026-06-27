@@ -47,6 +47,6 @@ Edite el archivo principal `main.tex` y modifique los campos básicos de la pres
 \date{\today}
 ```
 
-## ⚠️ Recomendaciones
+## ⚠️ Condiciones de uso
 
 Esta plantilla no reemplaza los documentos oficiales de identidad visual de la Universidad Surcolombiana ni sus lineamientos institucionales vigentes. Su uso debe realizarse de manera responsable, respetando la Política de Comunicaciones de la institución y las orientaciones oficiales sobre imagen institucional.

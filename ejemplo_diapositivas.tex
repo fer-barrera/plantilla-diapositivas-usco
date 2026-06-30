@@ -1,17 +1,19 @@
-\documentclass[aspectratio=169]{beamer}
+\documentclass[11pt, aspectratio=169]{beamer}
+
+% Paquetes
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[main=english]{babel}  
-\usepackage{ragged2e}  		% `\justifying` text
-\usepackage{booktabs}  		% Tables
+\usepackage[spanish]{babel}
+\usepackage{ragged2e}  									% \justifying text
+\usepackage{booktabs}  									% Tables
 \usepackage{tabularx}
-\usepackage{tikz}      			% Diagrams
+\usepackage{tikz}      										% Diagrams
 \usetikzlibrary{calc, shapes, backgrounds}
+\usepackage[american]{circuitikz}
 \usepackage{amsmath, amssymb}
-\usepackage{url}       				% `\url`s
-\usepackage{listings}  			% Code listings
+\usepackage{url}       											% \url`s
+\usepackage{listings}  										% Code listings
 
-% Additional packages that were not explicitly imported
 \usepackage{dsfont}
 \usepackage{algorithm, algpseudocode}
 \usepackage{changepage}
@@ -19,15 +21,14 @@
 %usco theme
 \usetheme{usco}
 
-%
+% Portada
 \course{Nombre del curso}
 \title{Titulo de la presentación}
 \date[\today]{\today}
-\author[Nombre Apellido]{Nombre completo\inst{1}, \textit{Eng. Ms.C, Ph.D}}
+\author[Nombre Apellido]{Nombre completo\inst{1}, {\small \textit{Eng. Ms.C, Ph.D}}}
 \email{x@usco.edu.co}
-\institute{\inst{1}~Universidad Surcolombiana}
+\institute{\inst{1}Universidad Surcolombiana}
 \summary{Resumen de la presentación}
-
 
 \begin{document}
 
@@ -35,138 +36,163 @@
 \titlepage
 \end{frame}
 
-\section{Basic Section}
-\subsection{Blind Text}
-\begin{frame}{Jabberwocky}
-    \framesubtitle{Lewis Carroll}%
-    \begin{tikzpicture}[overlay,remember picture]
-    \node[anchor=south east,xshift=-30pt,yshift=40pt]
-        at (current page.south east) {
-        \includegraphics[width=35mm]{resources/jabberwocky-light}
-        };
-    \end{tikzpicture}%
-    'Twas brillig, and the slithy toves\\
-    Did gyre and gimble in the wabe;\\
-    All mimsy were the borogoves,\\
-    And the mome raths outgrabe.\\\bigskip
-
-    “Beware the Jabberwock, my son!\\
-    The jaws that bite, the claws that catch!\\
-    Beware the Jubjub bird, and shun\\
-    The frumious Bandersnatch!”\\
+% ------------------------------------------------- CONTENIDO  -------------------------------------------------
+\begin{frame}{Contenido}
+    \tableofcontents
 \end{frame}
 
-\begin{frame}[label=lists]{Lists and locales}
+% ------------------------------------------------- INTRODUCCIÓN  -------------------------------------------------
+\section{Listas y enumeraciones}
+\begin{frame}{Listas y enumeraciones}
     \begin{columns}[onlytextwidth]
     \column{.5\textwidth}
-        \begin{itemize}
-        \item Nulla nec lacinia odio. Curabitur urna tellus.
-        \begin{itemize}
-            \item Fusce id sodales dolor. Sed id metus dui.
-            \begin{itemize}
-            \item Cupio virtus licet mi vel feugiat.
-            \end{itemize}
-        \end{itemize}
-        \item Nulla nec lacinia odio. Curabitur urna tellus.
-        \item Nulla nec lacinia odio. Curabitur urna tellus.
-        \end{itemize}
-    \column{.5\textwidth}
-        \begin{enumerate}
-        \item Donec porta, risus porttitor egestas scelerisque video.
-        \item Donec porta, risus porttitor egestas scelerisque video.
-        \begin{enumerate}
-            \item Nunc non ante fringilla, manus potentis cario.
-            \begin{enumerate}
-            \item Pellentesque servus morbi tristique.
-            \item Pellentesque servus morbi tristique.
-            \end{enumerate}
-        \end{enumerate}
-        \item Donec porta, risus porttitor egestas scelerisque video.
-        \end{enumerate}
+		\begin{itemize}
+		    \item Contexto general del trabajo
+		    \begin{itemize}
+		        \item Descripción del tema principal.
+		        \item Importancia del problema abordado.
+		        \item Relación con el área de estudio.
+		    \end{itemize}
+		
+		    \item Motivación
+		    \begin{itemize}
+		        \item Razones que justifican el desarrollo del trabajo.
+		        \item Necesidad académica, técnica o institucional.
+		    \end{itemize}
+		
+		    \item Alcance
+		    \begin{itemize}
+		        \item Aspectos que serán tratados en la presentación.
+		        \item Límites del trabajo desarrollado.
+		    \end{itemize}
+		\end{itemize}
+	\column{.5\textwidth}
+		\begin{enumerate}
+		    \item Contexto general del trabajo
+		    \begin{enumerate}
+		        \item Descripción del tema principal.
+		        \item Importancia del problema abordado.
+		        \item Relación con el área de estudio.
+		    \end{enumerate}
+		
+		    \item Motivación
+		    \begin{enumerate}
+		        \item Razones que justifican el desarrollo del trabajo.
+		        \item Necesidad académica, técnica o institucional.
+		    \end{enumerate}
+		
+		    \item Alcance
+		    \begin{enumerate}
+		        \item Aspectos que serán tratados en la presentación.
+		        \item Límites del trabajo desarrollado.
+		    \end{enumerate}
+		\end{enumerate}
     \end{columns}
-    \bigskip
-    \justifying
-
-    {\uselanguage{polish}Tutaj jakiś fajny tekst po polsku, żeby nie było, że
-    nie da się pisać po polsku z polskimi znakami.}
-    {\uselanguage{english}The quick, brown fox jumps over a lazy
-    dog. DJs flock by when MTV ax quiz prog. “Now fax quiz Jack!”}
 \end{frame}
 
-\subsection{Structuring Elements}
-\begin{frame}[label=simmonshall]{Text blocks}
-    \framesubtitle{In plain, example, and \alert{alert} flavour}
-    \alert{This text} is highlighted.
 
-    \begin{block}{A plain block}
-    This is a plain block containing some \alert{highlighted text}.
-    \end{block}
-    \begin{exampleblock}{An example block}
-    This is an example block containing some \alert{highlighted text}.
-    \end{exampleblock}
-    \begin{alertblock}{An alert block}
-    This is an alert block containing some \alert{highlighted text}.
-    \end{alertblock}
+% ------------------------------------------------- OBJETIVOS  -------------------------------------------------
+\section{Elementos estructurales}
+
+\subsection{Bloques de texto}
+\begin{frame}{Bloques de texto}{Tipo: simple, ejemplo, y \alert{alerta}}
+    \begin{columns}[onlytextwidth]
+	    \column{0.48\textwidth}
+	    \begin{block}{Un bloque simple (block)}\small
+	    		Este es un bloque de texto simple (\alert{block}).
+	    \end{block}
+	    \begin{exampleblock}{Un bloque de ejemplo (exampleblock)}\small
+	    		Este es un bloque de texto del tipo ejemplo (\alert{exampleblock}).
+		\end{exampleblock}
+	    \begin{alertblock}{Un bloque de alerta (alertblock)}\small
+	    		Este es un bloque de texto del tipo alerta (\alert{alertblock}).
+	    \end{alertblock}
+	\column{.48\textwidth}
+	    \begin{block}{}\small
+	    		Este es un bloque de texto simple (\alert{block}).
+	    \end{block}
+	    \begin{exampleblock}{}\small
+	    		Este es un bloque de texto del tipo ejemplo (\alert{exampleblock}).
+		\end{exampleblock}
+	    \begin{alertblock}{}\small
+	    		Este es un bloque de texto del tipo alerta (\alert{alertblock}).
+	    \end{alertblock}
+	 \end{columns}
 \end{frame}
 
-\begin{frame}[label=simmonshall]{Text blocks}
-    \framesubtitle{In plain, example, and \alert{alert} flavour}
-   \begin{brownblock}{brownblock}
-        This is a proof idea.
-    \end{brownblock}
+\begin{frame}{Otros bloques de texto}
+    \begin{columns}[onlytextwidth]
+	    \column{0.67\textwidth}
+	    \begin{brownblock}{Un bloque brownblock}\small
+	    		Este es un bloque de texto del tipo brownblock (\alert{brownblock}).
+	    \end{brownblock}
+	    \begin{darkredblock}{Un bloque darkredblock}\small
+	    		Este es un bloque de texto del tipo darkredblock (\alert{darkredblock}).
+		\end{darkredblock}
+	    \begin{lightredblock}{Un bloque lightredblock}\small
+	    		Este es un bloque de texto del tipo lightredblock (\alert{lightredblock}).
+	    \end{lightredblock}
+	    \begin{lightgreenblock}{Un bloque lightgreenblock}\small
+	    		Este es un bloque de texto del tipo lightgreenblock (\alert{lightgreenblock}).
+	    \end{lightgreenblock}
+	\column{.28\textwidth}
+	    \begin{brownblock}{}\tiny
+	    		Este es un bloque de texto del tipo brownblock (\alert{brownblock}).
+	    \end{brownblock}
+	    \begin{darkredblock}{}\tiny
+	    		Este es un bloque de texto del tipo darkredblock (\alert{darkredblock}).
+		\end{darkredblock}
+	    \begin{lightredblock}{}\tiny
+	    		Este es un bloque de texto del tipo lightredblock (\alert{lightredblock}).
+	    \end{lightredblock}
+	    \begin{lightgreenblock}{}\tiny
+	    		Este es un bloque de texto del tipo lightgreenblock (\alert{lightgreenblock}).
+	    \end{lightgreenblock}
+	\end{columns}
+\end{frame}
 
-    \begin{darkredblock}{darkredblock}
-        This is a proof idea.
-    \end{darkredblock}
-    
-    \begin{lightredblock}{lightredblock}
-        This is a proof idea.
-    \end{lightredblock}
-    
-    \begin{lightgreenblock}{lightgreenblock}
-        This is a proof idea.
-    \end{lightgreenblock}
- \end{frame}
- 
-    
- \begin{frame}[label=simmonshall]{Text blocks}    
+\begin{frame}{Otros bloques de texto}
     \begin{rededgeblock}{rededgeblock}
-        This is a proof idea.
+	    		Este es un bloque de texto del tipo rededgeblock (\alert{rededgeblock}).
     \end{rededgeblock}
     
-    \begin{rededgeblock_sm}{rededgeblock}
-        This is a proof idea.
+    \begin{rededgeblock_sm}{rededgeblock\_sm}
+	    		Este es un bloque de texto del tipo rededgeblock\_sm (\alert{rededgeblock\_sm}).
     \end{rededgeblock_sm}
-
 \end{frame}
 
-\begin{frame}[label=proof]{Definitions, theorems, and proofs}
-    \framesubtitle{All integers divide zero}
-    \begin{definition}
-    $\forall a,b\in\mathds{Z}: a\mid b\iff\exists c\in\mathds{Z}:a\cdot c=b$
-    \end{definition}
-    \begin{theorem}
-    $\forall a\in\mathds{Z}: a\mid 0$
-    \end{theorem}
-    \begin{proof}
-    $\forall a\in\mathds{Z}: a\cdot 0=0$
-    \end{proof}
+
+% ------------------------------------------------- Definiciones, teoremas y demostraciones  -------------------------------------------------
+\section{Definiciones, teoremas y demostraciones}
+
+\begin{frame}{Definitions, theorems, and proofs}   
+	\begin{definition}
+		$\forall a,b\in\mathds{Z}: a\mid b\iff\exists c\in\mathds{Z}:a\cdot c=b$
+	\end{definition}
+	\begin{theorem}
+		$\forall a\in\mathds{Z}: a\mid 0$
+	\end{theorem}
+	\begin{proof}
+		$\forall a\in\mathds{Z}: a\cdot 0=0$
+	\end{proof}
 \end{frame}
 
-\subsection{Numerals and Mathematics}
-\begin{frame}[label=math]{Numerals and Mathematics}
-    \framesubtitle{Formulae, equations, and expressions}
+% ------------------------------------------------- Números and matemáticas  -------------------------------------------------
+\subsection{Números and matemáticas}
+\begin{frame}[label=math]{Números and matemáticas}
+    \framesubtitle{Formulas, ecuaciones, y expresiones}
     \begin{columns}[onlytextwidth]
-    \column{.20\textwidth}
+    \column{.25\textwidth}
         1234567890
-    \column{.20\textwidth}
+    \column{.25\textwidth}
         \oldstylenums{1234567890}
-    \column{.20\textwidth}
+    \column{.25\textwidth}
         $\hat{x}$, $\check{x}$, $\tilde{a}$,
         $\bar{a}$, $\dot{y}$, $\ddot{y}$
-    \column{.40\textwidth}
+    \column{.45\textwidth}
         $\int \!\! \int f(x,y,z)\,\mathsf{d}x\mathsf{d}y\mathsf{d}z$
     \end{columns}
+    \vspace{1em}
     \begin{columns}[onlytextwidth]
     \column{.5\textwidth}
         $$\frac{1}{\displaystyle 1+
@@ -180,237 +206,222 @@
         F'_x     & F'_y     & 0
         \end{array}\right| = 0$$
     \end{columns}
+    \vspace{1em}
     \begin{columns}[onlytextwidth]
-    \column{.3\textwidth}
+    \column{.33\textwidth}
         $$\mathop{\int \!\!\! \int}_{\mathbf{x} \in \mathds{R}^2}
         \! \langle \mathbf{x},\mathbf{y}\rangle\,\mathsf{d}\mathbf{x}$$
     \column{.33\textwidth}
         $$\overline{\overline{a\alpha}^2+\underline{b\beta}
         +\overline{\overline{d\delta}}}$$
-    \column{.37\textwidth}
+    \column{.33\textwidth}
         $\left] 0,1\right[ + \lceil x \rfloor - \langle x,y\rangle$
     \end{columns}
+    \vspace{1em}
     \begin{columns}[onlytextwidth]
-    \column{.4\textwidth}
+    \column{.5\textwidth}
         \begin{eqnarray*}
         e^x &\approx& 1+x+x^2/2! + \\
             && {}+x^3/3! + x^4/4!
         \end{eqnarray*}
-    \column{.6\textwidth}
+    \column{.5\textwidth}
         $${n+1\choose k} = {n\choose k} + {n \choose k-1}$$
     \end{columns}
 \end{frame}
 
-\subsection{Figures and Code Listings}
-\begin{frame}[label=figs1]{Figures}
-    \framesubtitle{Tables, graphs, and images}
+
+\section{Figuras y código}
+\subsection{Tablas}
+\begin{frame}{Tablas}
     \begin{table}[!b]
-    {%\carlitoTLF % Use monospaced lining figures
     \begin{tabularx}{\textwidth}{Xrrr}
-        \textbf{Faculty} & \textbf{With \TeX} & \textbf{Total} &
-        \textbf{\%} \\
+        \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} & \textbf{Columna 4} \\
         \toprule
-        Faculty of Informatics       & 1\,716  & 2\,904  &
-        59.09 \\% 1433
-        Faculty of Science           & 786     & 5\,275  &
-        14.90 \\% 1431
-        Faculty of $\genfrac{}{}{0pt}{}{\textsf{Economics and}}{%
-        \textsf{Administration}}$    & 64      & 4\,591  &
-        1.39  \\% 1456
-        Faculty of Arts              & 69      & 10\,000 &
-        0.69  \\% 1421
-        Faculty of Medicine          & 8       & 2\,014  &
-        0.40  \\% 1411
-        Faculty of Law               & 15      & 4\,824  &
-        0.31  \\% 1422
-        Faculty of Education         & 19      & 8\,219  &
-        0.23  \\% 1441
-        Faculty of Social Studies    & 12      & 5\,599  &
-        0.21  \\% 1423
-        Faculty of Sports Studies    & 3       & 2\,062  &
-        0.15  \\% 1451
+        Uno       	& 1234  & 4567   & 59.09 \\
+        Dos 			& 123    & 5678   & 14.90 \\
+        Tres 			& 34      & 2345   & 1.39  \\
+        Cuatro 		& 32      & 12444 & 0.69  \\
         \bottomrule
-    \end{tabularx}}
-    \caption{The distribution of theses written using \TeX\ during 2010--15 at MU}
+    \end{tabularx}
+    \caption{Datos numéricos ultimo año.}
     \end{table}
 \end{frame}
 
-\begin{frame}[label=figs2]{Figures}
-    \framesubtitle{Tables, graphs, and images}
+\subsection{Figuras}
+\begin{frame}{Figuras}
     \begin{figure}[b]
     \centering
-    % Flipping a coin
-    % Author: cis
-    \tikzset{
-        head/.style = {fill = none, label = center:\textsf{H}},
-        tail/.style = {fill = none, label = center:\textsf{T}}}
-    \scalebox{0.65}{\begin{tikzpicture}[
-        scale = 1.5, transform shape, thick,
-        every node/.style = {draw, circle, minimum size = 10mm},
-        grow = down,  % alignment of characters
-        level 1/.style = {sibling distance=3cm},
-        level 2/.style = {sibling distance=4cm},
-        level 3/.style = {sibling distance=2cm},
-        level distance = 1.25cm
-        ]
-        \node[shape = rectangle,
-        minimum width = 6cm, font = \sffamily] {Coin flipping}
-        child { node[shape = circle split, draw, line width = 1pt,
-                minimum size = 10mm, inner sep = 0mm, rotate = 30] (Start)
-                { \rotatebox{-30}{H} \nodepart{lower} \rotatebox{-30}{T}}
-        child {   node [head] (A) {}
-            child { node [head] (B) {}}
-            child { node [tail] (C) {}}
-        }
-        child {   node [tail] (D) {}
-            child { node [head] (E) {}}
-            child { node [tail] (F) {}}
-        }
-        };
-
-        % Filling the root (Start)
-        \begin{scope}[on background layer, rotate=30]
-        \fill[head] (Start.base) ([xshift = 0mm]Start.east) arc (0:180:5mm)
-            -- cycle;
-        \fill[tail] (Start.base) ([xshift = 0pt]Start.west) arc (180:360:5mm)
-            -- cycle;
-        \end{scope}
-
-        % Labels
-        \begin{scope}[nodes = {draw = none}]
-        \path (Start) -- (A) node [near start, left]  {$0.5$};
-        \path (A)     -- (B) node [near start, left]  {$0.5$};
-        \path (A)     -- (C) node [near start, right] {$0.5$};
-        \path (Start) -- (D) node [near start, right] {$0.5$};
-        \path (D)     -- (E) node [near start, left]  {$0.5$};
-        \path (D)     -- (F) node [near start, right] {$0.5$};
-        \begin{scope}[nodes = {below = 11pt}]
-            \node [name = X] at (B) {$0.25$};
-            \node            at (C) {$0.25$};
-            \node [name = Y] at (E) {$0.25$};
-            \node            at (F) {$0.25$};
-        \end{scope}
-        \end{scope}
-    \end{tikzpicture}}
-    \caption{Tree of probabilities -- Flipping a coin\footnote[frame]{%
-        A derivative of a diagram from \url{texample.net} by cis, CC BY 2.5 licensed}}
+    \begin{circuitikz}[american, thick]
+		%-----------------------------------------
+		% Coordenadas principales
+		%-----------------------------------------
+		\coordinate (Ei) at (0,0);
+		\coordinate (A)  at (0.75,0);     % nodo de entrada
+		\coordinate (B)  at (3.4,0);     % nodo final red de entrada
+		\coordinate (N)  at (4.25,0);    % nodo inversor / realimentación
+		
+		% Altura de R1-C1 y R4
+		\coordinate (Aup) at (0.75,1.35);
+		\coordinate (Bup) at (3.4,1.35);
+		\coordinate (Nmid) at (4.25,1.35);
+		
+		% Altura de R2-C2
+		\coordinate (Ntop) at (4.25,2.35);
+		
+		%-----------------------------------------
+		% Amplificador operacional
+		%-----------------------------------------
+		\node[op amp, anchor=-, scale=1.0] (opamp) at (N) {};
+		
+		% Nodo de salida
+		\coordinate (O) at ($(opamp.out)+(0.8,0)$);
+		\coordinate (Omid) at (O |- Nmid);
+		\coordinate (Otop) at (O |- Ntop);
+		
+		%-----------------------------------------
+		% Entrada
+		%-----------------------------------------
+		\draw (Ei) node[ocirc]{} node[left]{\LARGE $e_i$}
+		      -- (A) node[circ]{};
+		
+		%-----------------------------------------
+		% Red de entrada: R3 en paralelo con R1-C1
+		%-----------------------------------------
+		\draw (A) to[R,l_=$R_3$] (B) node[circ]{}
+		      -- (N) node[circ]{};
+		
+		\draw (A) -- (Aup)
+		      to[R,l=$R_1$] ++(1.75,0)
+		      to[C,l=$C_1$] (Bup)
+		      -- (B);
+		
+		%-----------------------------------------
+		% Red de realimentación: R4 en paralelo con R2-C2
+		%-----------------------------------------
+		\draw (N) -- (Ntop);
+		
+		\draw (Ntop)
+		      to[R,l=$R_2$] ++(1.75,0)
+		      to[C,l=$C_2$] (Otop)
+		      -- (O);
+		
+		\draw (Nmid)
+		      to[R,l_=$R_4$] (Omid);
+		
+		\draw (O) -- (Otop);
+		
+		%-----------------------------------------
+		% Salida
+		%-----------------------------------------
+		\draw (opamp.out) -- (O) node[circ]{}
+		      -- ++(0.65,0) node[ocirc]{} node[right]{\LARGE $e_o$};
+		
+		%-----------------------------------------
+		% Entrada no inversora a tierra
+		%-----------------------------------------
+		\coordinate (G) at ($(opamp.+)+(0,-1.15)$);
+		\draw (opamp.+) -- (G);
+		
+		%-----------------------------------------
+		% Línea inferior de referencia
+		%-----------------------------------------
+		\coordinate (BotL) at (0,-1.8);
+		\coordinate (BotR) at ($(O)+(0.65,-1.3)$);
+		\coordinate (GB) at (G |- BotL);
+		
+		\draw (BotL) node[ocirc]{}
+		      -- (GB) node[circ]{}
+		      -- (BotR) node[ocirc]{};
+		
+		\draw (G) -- (GB);
+		\draw (GB) -- ++(0,-0.15) node[ground]{};
+		
+		\end{circuitikz}
+    \caption{Circuito con amplificadores operacionales.}
     \end{figure}
 \end{frame}
 
-\defverbatim[colored]\sleepSort{
-    \begin{lstlisting}[language=C,tabsize=2]
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+\subsection{Código}
+% Colores suaves para código
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{codeframe}{RGB}{220,220,220}
+\definecolor{codekeyword}{RGB}{0,82,155}
+\definecolor{codestring}{RGB}{170,45,45}
+\definecolor{codecomment}{RGB}{90,120,90}
+\definecolor{codenumber}{RGB}{120,120,120}
 
-// This is a comment
-int main(int argc, char **argv)
-{
-        while (--c > 1 && !fork());
-        sleep(c = atoi(v[c]));
-        printf("%d\n", c);
-        wait(0);
-        return 0;
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    backgroundcolor=\color{codebg},
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{codekeyword}\bfseries,
+    stringstyle=\color{codestring},
+    commentstyle=\color{codecomment}\itshape,
+    numberstyle=\tiny\color{codenumber},
+    numbers=left,
+    numbersep=8pt,
+    frame=single,
+    rulecolor=\color{codeframe},
+    framerule=0.4pt,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=1.2em,
+    framexleftmargin=1.2em,
+    aboveskip=0.8em,
+    belowskip=0.8em
 }
-\end{lstlisting}}
-\begin{frame}{Code listings}{An example source code in C}
-    \sleepSort
+
+\begin{frame}[fragile]{Código}{Ejemplo en Python: par o impar}
+\begin{lstlisting}[style=pythonstyle]
+for i in range(11):
+    if i % 2 == 0:
+        print(i, "es par")
+    else:
+        print(i, "es impar")
+\end{lstlisting}
 \end{frame}
 
-\begin{frame}
+\subsection{Algoritmos}
+\begin{frame}{Gradiente descendiente}
 	\begin{algorithm}[H]
-		\caption{Text Summarization Algorithm}\label{euclid}
+		\caption{Algoritmo de descenso más pronunciado para una red neuronal}
+		\label{alg:steepest-descent}
+
 		\begin{algorithmic}[1]
-			\Procedure{Summary Construction}{}\newline
-			\textbf{Input:} Text Document.\newline
-			\textbf{Output:} Summary sentences.
-			\State{Creating information table from a text document.}
-			\State{Generate matrices.}
-			\State {\textbf{Call Pocedure:} Reduct Construction \textbf{[Algorithm 2]}}
-			\State {\textbf{Return:} Summary sentences}
-			\EndProcedure
+			\State Inicializar pesos $W$ y sesgos $b$
+			\State Definir la tasa de aprendizaje $\alpha$
+			\State Definir el número máximo de iteraciones $N$
+			
+			\For{$k = 1,2,\dots,N$}
+			    \State Calcular la salida de la red: $\hat{y}=f(x;W,b)$
+			    \State Calcular la función de pérdida: $J(W,b)$
+			    \State Calcular los gradientes: $\nabla_W J$ y $\nabla_b J$
+			    \State Actualizar los pesos: $W \leftarrow W - \alpha \nabla_W J$
+			    \State Actualizar los sesgos: $b \leftarrow b - \alpha \nabla_b J$
+			\EndFor
+			
+			\State Retornar los parámetros entrenados $W$ y $b$
 		\end{algorithmic}
-		\label{alg_1}
 	\end{algorithm}
 \end{frame}
 
-\begin{frame}{RealBoost algorithm}{With narrow margins}
-	% https://tex.stackexchange.com/a/200172/228402
-	  \begin{columns}
-		\column{\dimexpr\paperwidth-10pt}
-		\begin{algorithm}[H]
-			\caption{Algorytm RealBoost}\label{realboost}
-			\small
-			\begin{algorithmic}[1]
-				\Procedure{RealBoost}{$D$}
-				\State{Rozpocznij od jednostajnego rozkładu wag: $w_i := 1/m, i=1, \ldots, m$.}
-				\For{$t:=1,\ldots, T$}
-					\State Naucz klasyfikator $f_t(x) \in \mathds{R}$ na danych uczących używając wag $w_i$, tak aby $f_t$ minimalizowało \emph{kryterium wykładnicze} $\sum_{i=1}^{m} w_i e^{-f_t(x_i)y_i}$ lub równoważnie aby $f_t$ było przybliżeniem połowy przekształcenia logit:
-					\Statex $f_{t}(\mathbf{x}):=1 / 2 \ln \left\{\widehat{P}_{w}(y=1 \mid \mathbf{x}) \sqrt{P}_{w}(y=-1 \mid \mathbf{x})\right)$
-					\State Aktualizuj wagi przykładów wg:
-					\Statex $Z_{t}:=\sum_{i=1}^{i n} w_{i} e^{-f_{i}\left(x_{i}\right) y_{i}}$
-					\Statex $w_{i}:=w_{i} e^{-f_{i}\left(\mathbf{x}_{i}\right) y_{i}} / Z_{t}, \quad i=1, \ldots, m$
-				\EndFor\\
-				\Return zbiorowy klasyfikator $F(\mathbf{x}):=\sum_{t=1}^{T} f_{t}(\mathbf{x})$ z decyzją obliczaną jako sgn $F(x)$.
-				\EndProcedure
-			\end{algorithmic}
-			\label{alg_2}
-		\end{algorithm}
-	\end{columns}
+\section{Citaciones bibliográfica}
+
+\begin{frame}{Citas y referencias} 
+El método de gradiente descendente es un algoritmo iterativo usado para entrenar redes neuronales mediante la minimización de una función de pérdida (costo). Para ello, se actualizan los pesos en dirección opuesta al gradiente, reduciendo progresivamente el error del modelo \cite{rumelhart1986}. Sus variantes estocásticas, fundamentadas en la aproximación estocástica \cite{robbins1951}, permiten entrenar modelos a gran escala \cite{bottou2010}, mientras que métodos como \textit{Momentum}, \textit{RMSProp} y \textit{Adam} mejoran la convergencia y estabilidad del entrenamiento \cite{ruder2016}.
 \end{frame}
 
-\subsection{Citations and Bibliography}
-\begin{frame}[label=citations]{Citations}
-    \framesubtitle{\TeX, \LaTeX, and Beamer}
-
-    \justifying\TeX\ is a programming language for the typesetting
-    of documents. It was created by Donald Erwin Knuth in the late
-    1970s and it is documented in \emph{The \TeX
-    book}~\cite{knuth84}.
-
-    In the early 1980s, Leslie Lamport created the initial version
-    of \LaTeX, a high-level language on top of \TeX, which is
-    documented in \emph{\LaTeX : A Document Preparation
-    System}~\cite{lamport94}. There exists a healthy ecosystem of
-    packages that extend the base functionality of \LaTeX;
-    \emph{The \LaTeX\ Companion}~\cite{MG94} acts as a guide
-    through the ecosystem.
-
-    In 2003, Till Tantau created the initial version of Beamer, a
-    \LaTeX\ package for the creation of presentations. Beamer is
-    documented in the \emph{User's Guide to the Beamer
-    Class}~\cite{tantau04}.
+\begin{frame}{Referencias}{\TeX, \LaTeX, and Beamer}
+	\begin{thebibliography}{9} 
+		\bibitem{robbins1951} H. Robbins and S. Monro, ``A Stochastic Approximation Method,'' \textit{The Annals of Mathematical Statistics}, vol. 22, no. 3, pp. 400--407, 1951.
+		\bibitem{rumelhart1986} D. E. Rumelhart, G. E. Hinton, and R. J. Williams, ``Learning representations by back-propagating errors,'' \textit{Nature}, vol. 323, pp. 533--536, 1986. 
+		\bibitem{bottou2010} L. Bottou, ``Large-Scale Machine Learning with Stochastic Gradient Descent,'' in \textit{Proceedings of COMPSTAT 2010}, pp. 177--186, 2010. 
+		\bibitem{ruder2016} S. Ruder, ``An overview of gradient descent optimization algorithms,'' \textit{arXiv preprint arXiv:1609.04747}, 2016. \end{thebibliography} 
 \end{frame}
 
-\begin{frame}[label=bibliography]{Bibliography}
-    \framesubtitle{\TeX, \LaTeX, and Beamer}
-    \begin{thebibliography}{9}
-    \bibitem{knuth84}
-        Donald~E.~Knuth.
-        \emph{The \TeX book}.
-        Addison-Wesley, 1984.
-    \bibitem{lamport94}
-        Leslie~Lamport.
-        \emph{\LaTeX : A Document Preparation System}.
-        Addison-Wesley, 1986.
-    \bibitem{MG94}
-        M.~Goossens, F.~Mittelbach, and A.~Samarin.
-        \emph{The \LaTeX\ Companion}.
-        Addison-Wesley, 1994.
-    \bibitem{tantau04}
-        Till~Tantau.
-        \emph{User's Guide to the Beamer Class Version 3.01}.
-        Available at \url{http://latex-beamer.sourceforge.net}.
-    \bibitem{MS05}
-        A.~Mertz and W.~Slough.
-        Edited by B.~Beeton and K.~Berry.
-        \emph{Beamer by example} In TUGboat,
-            Vol. 26, No. 1., pp. 68-73.
-    \end{thebibliography}
-\end{frame}
-
-\makethanks
+% ------------------------------------------------- AGRADECIMIENTO  -------------------------------------------------
+\agradecimiento
 
 \end{document}
 

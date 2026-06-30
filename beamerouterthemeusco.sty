@@ -13,13 +13,25 @@
 % header
 \defbeamertemplate*{headline}{usco theme}
 {
-	\ifnum \theframenumber<1
-	 	\leavevmode%
-	 	\hbox{ \begin{beamercolorbox}[wd=\paperwidth,dp=5ex,ht=10ex,right]{}%
-        % empty environment to raise height\hfill
-        \includegraphics[width=0.2\paperwidth,keepaspectratio]{ingenieria.png}\hspace{10 pt}
-     	\end{beamercolorbox}}%
-	 	\vskip0pt%
+\ifnum\theframenumber<1
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=1cm,dp=1cm]{}%
+            \hbox to \paperwidth{%
+                \hfill%
+                \raisebox{0.0cm}{% control vertical
+                    \includegraphics[
+                        width=0.12\paperwidth,
+                        height=1.4cm,
+                        keepaspectratio
+                    ]{ingenieria.png}%
+                }%
+                \hspace*{0.5cm}% control horizontal derecho
+            }%
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+
 	\else
   		\leavevmode%
  		\hbox{%
@@ -123,7 +135,7 @@
 }
 
 % Diapositiva de agradecimiento
-\def\makethanks{%
+\def\agradecimiento{%
 {
   \begin{frame}[plain,c]
   \frametitle{}

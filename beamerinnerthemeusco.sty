@@ -28,7 +28,6 @@
 	% Dibujar el rectángulo pequeño y centrado:
 	\pgfmathsetmacro{\offseth}{\smallh * 0.3};
 	\fill[color=darkred,] (\smallx pt,\smally pt) rectangle ( \smallx + \smallw pt, \smally + \smallh - \offseth pt);
-	%\node[opacity=1,inner sep=0pt] at (2,8) {\includegraphics[width=0.25\paperwidth,keepaspectratio]{ingenieria.png}};
     % ---------------------------------------	
 	% banner usco	
 	\pgfmathsetmacro{\bannerypos}{\the\paperwidth*0.21};
@@ -79,7 +78,7 @@
 		  (360-\beta:\subcircleC pt) arc[start angle=360-\beta, end angle=\beta+360, radius=\subcircleC pt]
 		  -- cycle;
 		%-------------------------------------------
-		% 6) Círculo central partido
+		% 6) Círculo central dividido
 		%-------------------------------------------
 		\pgfmathsetmacro{\subcircleD}{\subcircleC*0.45)};
 		\pgfmathsetmacro{\gamma}{acos(\subcircleC*cos(\beta)/\subcircleD)}      % ángulo de corte
